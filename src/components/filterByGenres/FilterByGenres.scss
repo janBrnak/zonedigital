@@ -1,0 +1,12 @@
+.filter-by-genres {
+  width: 60%;
+  &__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    & > label {
+      width: 20%;
+    }
+  }
+}

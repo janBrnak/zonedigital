@@ -10,15 +10,17 @@ import Movies from './components/movies/Movies';
 // Init root app
 let App = ({filter, movies, genres, onCheckGenre, onSelectVoteAverage}) => (
   <div className="app">
-    <FilterByGenres
-      genres={genres}
-      selected={filter.byGenres}
-      onCheckGenre={onCheckGenre}
-    ></FilterByGenres>
-    <FilterByVoteAverage
-      selected={filter.byVoteAverage}
-      onSelectVoteAverage={onSelectVoteAverage}
-    ></FilterByVoteAverage>
+    <div className="app__filter">
+      <FilterByGenres
+        genres={genres}
+        selected={filter.byGenres}
+        onCheckGenre={onCheckGenre}
+      ></FilterByGenres>
+      <FilterByVoteAverage
+        selected={filter.byVoteAverage}
+        onSelectVoteAverage={onSelectVoteAverage}
+      ></FilterByVoteAverage>
+    </div>
     <Movies
       movies={movies}
     ></Movies>

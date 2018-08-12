@@ -1,0 +1,17 @@
+.movie-item {
+  text-align: center;
+  margin-bottom: 30px;
+  width: 20%;
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__poster {
+    margin: 10px 0;
+  }
+
+  &__genres {
+    font-size: 0.9em;
+  }
+}

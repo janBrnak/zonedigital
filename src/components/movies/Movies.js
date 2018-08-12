@@ -1,18 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Movies.css';
 
 import MovieItems from '../movieItem/MovieItems';
 
 const Movies = ({ movies }) => (
-  <div>
-    {movies.map((movie, index) => (
-      <MovieItems 
-        key={movie.id}
-        id={movie.id}
-        title={movie.title}
-        posterPath={movie.posterPath}
-        genres={movie.genres} />
-    ))}
+  <div className="movies">
+    <h3>Movies: </h3>
+    <div className="movies__items">
+      {movies.map((movie, index) => (
+        <MovieItems 
+          key={movie.id}
+          id={movie.id}
+          title={movie.title}
+          posterPath={movie.posterPath}
+          genres={movie.genres} />
+      ))}
+    </div>
   </div>
 )
 

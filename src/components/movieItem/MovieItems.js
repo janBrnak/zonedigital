@@ -4,13 +4,13 @@ import './MovieItems.css';
 
 const MovieItems = ({ id, title, posterPath, genres }) => (
   <div className="movie-item" id={id}>
-    <img src={posterPath} alt={title} title={title} width="150" />
-    <br />
-    <strong>{title}</strong>
-    <br />
+    <div className="movie-item__title">{title}</div>
+    <div className="movie-item__poster"><img src={posterPath} alt={title} title={title} width="150" /></div>
+    <div className="movie-item__genres">
     {genres
       .map(gener => gener ? `${gener.name}` : ``)
       .join(', ')}
+    </div>
   </div>
 )
 
