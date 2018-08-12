@@ -2,14 +2,14 @@ import fetch from 'cross-fetch';
 import { FETCH_MOVIE_GENRE_LIST } from '../api';
 
 export const REQUEST_MOVIE_GENRE_LIST = 'REQUEST_MOVIE_GENRE_LIST'
-function requestMoviesNowPlaying() {
+function requestMoviesNowPlayingAction() {
   return {
     type: REQUEST_MOVIE_GENRE_LIST
   };
 }
 
 export const RECEIVE_MOVIE_GENRE_LIST = 'RECEIVE_MOVIE_GENRE_LIST'
-function receiveMoviesNowPlaying(json) {
+function receiveMoviesNowPlayingAction(json) {
   return {
     type: RECEIVE_MOVIE_GENRE_LIST,
     payload: json
@@ -18,7 +18,7 @@ function receiveMoviesNowPlaying(json) {
 
 export default function fetchMovieGenreListAction() {
   return function (dispatch) {
-    dispatch(requestMoviesNowPlaying());
+    dispatch(requestMoviesNowPlayingAction());
 
     return fetch(FETCH_MOVIE_GENRE_LIST)
       .then(
@@ -26,7 +26,7 @@ export default function fetchMovieGenreListAction() {
         error => console.log('An error occurred.', error)
       )
       .then(json =>
-        dispatch(receiveMoviesNowPlaying(json))
+        dispatch(receiveMoviesNowPlayingAction(json))
       );
   };
 }

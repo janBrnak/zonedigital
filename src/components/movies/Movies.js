@@ -11,7 +11,8 @@ const Movies = ({ movies }) => (
         id={movie.id}
         title={movie.title}
         posterPath={movie.posterPath}
-        genreIds={movie.genreIds} />
+        voteAverage={movie.voteAverage}
+        genres={movie.genres} />
     ))}
   </div>
 )
@@ -22,7 +23,12 @@ Movies.propTypes = {
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       posterPath: PropTypes.string.isRequired,
-      genreIds: PropTypes.arrayOf(PropTypes.number).isRequired
+      genres: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number.isRequired,
+          name: PropTypes.string.isRequired
+        }).isRequired
+      ).isRequired
     }).isRequired
   ).isRequired
 }

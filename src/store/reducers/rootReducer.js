@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import fetchMoviesNowPlaying from './fetchMoviesNowPlayingReducer';
-import fetchMovieGenreList from './fetchMovieGenreListReducer';
+import filterReduce from './filterReducer';
+import fetchMoviesNowPlayingReduce from './fetchMoviesNowPlayingReducer';
+import fetchMovieGenreListReduce from './fetchMovieGenreListReducer';
 
 const rootReducer = combineReducers({
-  movies: fetchMoviesNowPlaying,
-  genres: fetchMovieGenreList
+  filter: filterReduce,
+  movies: fetchMoviesNowPlayingReduce,
+  genres: fetchMovieGenreListReduce
 });
 
 export default rootReducer;

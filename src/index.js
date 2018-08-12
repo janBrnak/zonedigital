@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import {
+  createStore,
+  applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
+
 import rootReducer from './store/reducers/rootReducer';
-import fetchMoviesNowPlaying from './store/actions/fetchMoviesNowPlayingAction';
-import fetchMovieGenreList from './store/actions/fetchMovieGenreListAction';
+import fetchMoviesNowPlayingAction from './store/actions/fetchMoviesNowPlayingAction';
+import fetchMovieGenreListAction from './store/actions/fetchMovieGenreListAction';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -18,8 +21,8 @@ const store = createStore(
   )
 );
 
-store.dispatch(fetchMoviesNowPlaying()); // fetch movies
-store.dispatch(fetchMovieGenreList()); // fetch geners
+store.dispatch(fetchMoviesNowPlayingAction()); // fetch movies
+store.dispatch(fetchMovieGenreListAction()); // fetch geners
 
 ReactDOM.render(
   <Provider store={store}>

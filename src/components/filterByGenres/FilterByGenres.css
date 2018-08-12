@@ -1,0 +1,7 @@
+.filter-by-genres {
+  width: 800px;
+}
+.filter-by-genres > div {
+  width: 20%;
+  display: inline-block;
+}
