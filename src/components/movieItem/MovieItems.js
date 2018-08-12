@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './MovieItems.css';
 
-const MovieItems = ({ id, title, posterPath, genres }) => (
+const MovieItems = ({ id, title, posterPath, voteAverage, genres }) => (
   <div className="movie-item" id={id}>
     <div className="movie-item__title">{title}</div>
     <div className="movie-item__poster"><img src={posterPath} alt={title} title={title} /></div>
@@ -11,6 +11,7 @@ const MovieItems = ({ id, title, posterPath, genres }) => (
       .map(gener => gener ? `${gener.name}` : ``)
       .join(', ')}
     </div>
+    <div className="movie-item__vote-average">Vote Average: {voteAverage}</div>
   </div>
 )
 
