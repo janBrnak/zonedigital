@@ -27,7 +27,7 @@ Movies.propTypes = {
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       posterPath: PropTypes.string.isRequired,
-      voteAverage: PropTypes.string.isRequired,      
+      voteAverage: PropTypes.number.isRequired,   
       genres: PropTypes.arrayOf(
         PropTypes.shape({
           id: PropTypes.number.isRequired,
