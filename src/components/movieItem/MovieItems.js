@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './MovieItems.css';
 
-const MovieItems = ({ id, title, posterPath, voteAverage, genres }) => (
+const MovieItems = ({ id, title, posterPath, genres }) => (
   <div className="movie-item" id={id}>
     <img src={posterPath} alt={title} title={title} width="150" />
     <br />
     <strong>{title}</strong>
     <br />
-    Vote Average: {voteAverage}
-    <br />
-    Genres: {genres.map(gener => `${gener.name} `)}
+    {genres
+      .map(gener => gener ? `${gener.name}` : ``)
+      .join(', ')}
   </div>
 )
 
@@ -18,7 +18,6 @@ MovieItems.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   posterPath: PropTypes.string.isRequired,
-  voteAverage: PropTypes.number.isRequired,
   genres: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,

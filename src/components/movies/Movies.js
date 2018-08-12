@@ -11,7 +11,6 @@ const Movies = ({ movies }) => (
         id={movie.id}
         title={movie.title}
         posterPath={movie.posterPath}
-        voteAverage={movie.voteAverage}
         genres={movie.genres} />
     ))}
   </div>

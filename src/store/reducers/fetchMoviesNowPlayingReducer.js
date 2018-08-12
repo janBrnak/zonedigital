@@ -14,7 +14,6 @@ export default function fetchMoviesNowPlayingReduce(
         isFetching: true
       });
     case RECEIVE_MOVIES_NOW_PLAYING:
-      console.log(action.payload.results.map(result => ({title: result.title, voteAverage: result.vote_average, popularity: result.popularity})));
       return Object.assign({}, state, {
         isFetching: false,
         items: action.payload.results
