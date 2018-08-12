@@ -8,11 +8,11 @@ export default function fetchMovieGenreList(
   switch (action.type) {
     case REQUEST_MOVIE_GENRE_LIST:
       return Object.assign({}, state, {
-        is_fetching: true
+        isFetching: true
       })
     case RECEIVE_MOVIE_GENRE_LIST:
       return Object.assign({}, state, {
-        is_fetching: false,
+        isFetching: false,
         items: action.payload.genres
       })
     default:

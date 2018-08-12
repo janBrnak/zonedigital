@@ -1,6 +1,6 @@
 export const INITIAL_STATE = {
   movies: {
-    is_fetching: false,
+    isFetching: false,
     items: [],
     dates: [],
     page: 0,
@@ -8,7 +8,7 @@ export const INITIAL_STATE = {
     total_results: 0
   },
   genres: {
-    is_fetching: false,
+    isFetching: false,
     items: []
   }
 };

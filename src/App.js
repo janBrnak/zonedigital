@@ -1,21 +1,14 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import { connect } from 'react-redux'
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+import Movies from './components/movies/Movies';
+
+let App = ({movies, genres}) => (
+  <div className="app">
+    <Movies movies={movies.items}></Movies>
+  </div>
+);
+App = connect(state => state)(App)
 
 export default App;

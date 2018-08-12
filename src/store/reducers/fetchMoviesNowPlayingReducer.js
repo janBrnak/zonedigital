@@ -9,16 +9,17 @@ export default function fetchMoviesNowPlaying(
   switch (action.type) {
     case REQUEST_MOVIES_NOW_PLAYING:
       return Object.assign({}, state, {
-        is_fetching: true
+        isFetching: true
       })
     case RECEIVE_MOVIES_NOW_PLAYING:
       return Object.assign({}, state, {
-        is_fetching: false,
-        items: action.payload.results.map(result => Object.assign(result, { poster_path: `${URL_MOVIE_POSTER}${result.poster_path}` })),
-        dates: action.payload.dates,
-        page: action.payload.page,
-        total_pages: action.payload.total_pages,
-        total_results: action.payload.total_results
+        isFetching: false,
+        items: action.payload.results.map(result => ({
+          id: result.id,
+          title: result.title,
+          posterPath: `${URL_MOVIE_POSTER}${result.poster_path}`,
+          genreIds: result.genre_ids,
+        }))
       })
     default:
       return state
