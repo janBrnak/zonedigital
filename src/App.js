@@ -1,21 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import { connect } from 'react-redux'
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+import { mapStateToProps, mapDispatchToProps } from './store/mapHelper';
+import FilterByGenres from './components/filterByGenres/FilterByGenres';
+import FilterByVoteAverage from './components/filterByVoteAverage/FilterByVoteAverage';
+import Movies from './components/movies/Movies';
+
+// Init root app
+let App = ({filter, movies, genres, onCheckGenre, onSelectVoteAverage}) => (
+  <div className="app">
+    <FilterByGenres
+      genres={genres}
+      selected={filter.byGenres}
+      onCheckGenre={onCheckGenre}
+    ></FilterByGenres>
+    <FilterByVoteAverage
+      selected={filter.byVoteAverage}
+      onSelectVoteAverage={onSelectVoteAverage}
+    ></FilterByVoteAverage>
+    <Movies
+      movies={movies}
+    ></Movies>
+  </div>
+);
+
+// connect Redux store to React app
+App = connect(mapStateToProps, mapDispatchToProps)(App);
 
 export default App;
