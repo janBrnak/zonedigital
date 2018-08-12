@@ -1,0 +1,25 @@
+.movie-item {
+  text-align: center;
+  padding: 15px 0;
+  width: 20%;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  box-sizing: border-box;
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__poster {
+    margin: 10px 0;
+
+    & > img {
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+
+  &__genres {
+    font-size: 0.9em;
+  }
+}

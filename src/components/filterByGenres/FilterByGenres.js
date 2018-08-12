@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import './FilterByGenres.css'
 
 const FilterByGenres = ({ genres, selected, onCheckGenre }) => (
   <div className="filter-by-genres">
-    {genres.map((genre, index) => (
-      <div key={genre.id}> 
-        <label>
+    <h3>Filter By Genres: </h3>
+    <div className="filter-by-genres__items">
+      {genres.map((genre, index) => (
+        <label key={genre.id}>
           <input
             type="checkbox"
             name="genres"
@@ -18,8 +18,8 @@ const FilterByGenres = ({ genres, selected, onCheckGenre }) => (
           />
           {genre.name}
         </label>
-      </div>
-    ))}
+      ))}
+    </div>
   </div>
 )
 
