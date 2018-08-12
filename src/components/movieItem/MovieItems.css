@@ -14,3 +14,5 @@
       max-width: 200px; }
   .movie-item__genres {
     font-size: 0.9em; }
+  .movie-item__vote-average {
+    font-size: 0.9em; }
