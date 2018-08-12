@@ -1,5 +1,9 @@
 .filter-by-genres {
   width: 60%;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  padding: 0 15px 15px;
+
   &__items {
     display: flex;
     flex-direction: row;
@@ -7,6 +11,7 @@
 
     & > label {
       width: 20%;
+      padding: 5px 0 0;
     }
   }
 }

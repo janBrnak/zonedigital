@@ -6,7 +6,7 @@ import MovieItems from '../movieItem/MovieItems';
 
 const Movies = ({ movies }) => (
   <div className="movies">
-    <h3>Movies: </h3>
+    <h3>List of Movies </h3>
     <div className="movies__items">
       {movies.map((movie, index) => (
         <MovieItems 

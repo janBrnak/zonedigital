@@ -1,4 +1,6 @@
 .filter-by-vote-average {
-  width: 40%; }
+  width: 40%;
+  border-bottom: 1px solid lightgray;
+  padding: 0 15px 15px; }
   .filter-by-vote-average > select {
     width: 20%; }
